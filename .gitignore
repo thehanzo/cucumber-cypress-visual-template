@@ -1,0 +1,10 @@
+
+.DS_Store
+node_modules
+cypress.env.json
+cypress/cucumber-json/
+cypress/test-results/
+cypress/videos/
+cypress/screenshots/
+cypress/snapshots/
+package-lock.json

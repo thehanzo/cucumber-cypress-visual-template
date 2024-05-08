@@ -1,0 +1,48 @@
+{
+  "author": "Jose Quesada jquesada@accuray.com",
+  "dependencies": {
+    "cypress-cucumber-attach-screenshots-to-failed-steps": "^1.0.0",
+    "cypress-wait-until": "^1.7.2",
+    "nvm": "^0.0.4",
+    "rimraf": "3.0.2",
+    "typescript": "^4.7.4"
+  },
+  "description": "Cypress end-to-end test automation. Using ES Modules, Chai and Should.",
+  "devDependencies": {
+    "@applitools/eyes-cypress": "^3.27.5",
+    "cypress": "^10.11.0",
+    "cypress-cucumber-preprocessor": "^4.3.1",
+    "cypress-multi-reporters": "^1.6.3",
+    "cypress-real-events": "^1.8.1",
+    "cypress-visual-regression": "^3.0.0",
+    "mocha": "^10.2.0",
+    "mocha-junit-reporter": "^2.2.0",
+    "multiple-cucumber-html-reporter": "^3.0.1"
+  },
+  "name": "accuray-automation-cucumber",
+  "scripts": {
+    "lint": "eslint --ext .js --fix",
+    "cleanReports": "npx rimraf cypress/test-results/* || true && npx rimraf cypress/cucumber-json/* || true && npx rimraf cypress/videos/* || true && npx rimraf cypress/screenshots/* && npx rimraf cypress/snapshots/*",
+    "report": "node ./cypress/cucumber-html-report.js",
+    "xmlReport": "npx cypress run --reporter cypress-multi-reporters --reporter-options configFile=reporter-config.Json",
+    "junit:merge": "npx junit-merge -d cypress/test-results/junit -o cypress/test-results/junit/result.xml --createDir=true",
+    "gui": "npx cypress open --e2e --browser chrome",
+    "dashboard": "npm run chrome --group Chrome --record --parallel && npm run firefox --group Firefox --record --parallel",
+    "chrome": "npm run xmlReport --headless --browser chrome",
+    "firefox": "npm run xmlReport --headless --browser firefox",
+    "edge": "npm run xmlReport --headless --browser edge"
+  },
+  "version": "1.0.0",
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": false,
+    "filterSpecs": true,
+    "omitFiltered": true,
+    "stepDefinitions": "cypress/integration/stepDefinitions",
+    "cucumberJson": {
+      "generate": true,
+      "outputFolder": "cypress/cucumber-json",
+      "filePrefix": "",
+      "fileSuffix": ".cucumber"
+    }
+  }
+}

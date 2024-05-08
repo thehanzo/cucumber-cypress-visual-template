@@ -1,0 +1,19 @@
+{
+  "session": "67890",
+  "name": "M13_bunker",
+  "voi": {
+    "all": 0,
+    "prostate": 1,
+    "rectum": 2,
+    "bladder": 3,
+    "sigmoid": 4,
+    "femurL": 5,
+    "femurR": 6,
+    "fiducials": 7,
+    "fiducials1mm": 8,
+    "external": 9,
+    "ptvProstate": 10,
+    "gtv2Femur": 11,
+    "ptv2Femur": 12
+  }
+} 

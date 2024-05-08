@@ -1,0 +1,13 @@
+{
+  "patient_id": "jlund,br",
+  "id": "28912102a",
+  "birth_date": "07 Jul 1970",
+  "gender": "Female",
+  "position": "HFS",
+  "physician": "",
+  "plan_name": "TD_Plan",
+  "plan_approval": "17 Feb 2021",
+  "fraction_dose": "0.75Gy",
+  "fraction_number": "1.3",
+  "planned_beam": "11.2"
+}
